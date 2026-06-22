@@ -129,6 +129,7 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
     <a href="#home" class="flex items-center gap-3">
       <img src="images/logo.png" alt="Dr Prakash's Bone and Joint Care Clinic logo" class="w-12 h-12 rounded-full object-cover">
+      <img src="images/logo.png" alt="Dr Prakash's Bone and Joint Care Clinic logo" class="w-12 h-12 rounded-full object-cover">
       <span class="leading-tight">
         <span class="block font-display font-bold text-white text-sm sm:text-base">Dr Prakash's</span>
         <span class="block text-[11px] sm:text-xs text-cyan-400 tracking-wide">Bone &amp; Joint Care Clinic</span>
@@ -362,12 +363,30 @@
     <h2 class="font-display text-2xl sm:text-3xl font-bold mb-3">Recognised &amp; Listed On</h2>
     <p class="text-slate-400 mb-10">Verified across India's leading healthcare and local-business platforms.</p>
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">Google</div>
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">Practo</div>
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">Justdial</div>
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">DocIndia</div>
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">Sulekha</div>
-      <div class="glass p-5 rounded-2xl font-semibold text-slate-300">Mappls</div>
+      <a href="https://www.google.com/maps/search/Dr+Prakash%27s+Bone+%26+Joint+Care+Clinic/@23.3491923,85.3170091,17z" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Google
+      </a>
+      <a href="https://www.practo.com/ranchi/doctor/prakash-kumar-orthopedist" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/><path d="M12 12h.01"/><path d="M8 12h.01"/><path d="M16 12h.01"/></svg>
+        Practo
+      </a>
+      <a href="https://www.justdial.com/Ranchi/Dr-Prakash-Bone-Joint-Care-Clinic-Kadru/sch" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Justdial
+      </a>
+      <a href="https://www.docindia.com/search?q=Dr+Prakash+Kumar+Ranchi+Orthopedic" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        DocIndia
+      </a>
+      <a href="https://www.sulekha.com/orthopedic-surgeons/ranchi" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Sulekha
+      </a>
+      <a href="https://mappls.com/place/Dr-Prakash-Bone-Joint-Care-Clinic-Kadru-Ranchi" target="_blank" rel="noopener" class="glass p-5 rounded-2xl font-semibold text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition flex flex-col items-center gap-2">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+        Mappls
+      </a>
     </div>
   </div>
 </section>
@@ -637,6 +656,44 @@
       cam.aspect = innerWidth/innerHeight; cam.updateProjectionMatrix();
       renderer.setSize(innerWidth, innerHeight);
     });
+  })();
+
+  // ===== Gallery lightbox =====
+  (function(){
+    const overlay = document.createElement('div');
+    overlay.id = 'lightbox';
+    overlay.style.cssText = [
+      'position:fixed','inset:0','z-index:9999','display:none',
+      'background:rgba(2,6,23,.92)','backdrop-filter:blur(12px)',
+      'align-items:center','justify-content:center','cursor:zoom-out'
+    ].join(';');
+    overlay.innerHTML =
+      '<button id="lb-close" style="position:absolute;top:20px;right:24px;color:#94a3b8;font-size:2rem;line-height:1;background:none;border:none;cursor:pointer">✕</button>' +
+      '<img id="lb-img" src="" alt="" style="max-width:90vw;max-height:88vh;border-radius:1rem;object-fit:contain;box-shadow:0 40px 80px rgba(0,0,0,.7)">' +
+      '<p id="lb-caption" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);color:#94a3b8;font-size:.85rem;white-space:nowrap"></p>';
+    document.body.appendChild(overlay);
+
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
+
+    function openLightbox(src, alt){
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lbCaption.textContent = alt;
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(){
+      overlay.style.display = 'none';
+      lbImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.src, img.alt));
+    });
+    overlay.addEventListener('click', e => { if(e.target === overlay || e.target.id === 'lb-close') closeLightbox(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
   })();
 </script>
 </body>
