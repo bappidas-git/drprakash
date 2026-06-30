@@ -62,9 +62,9 @@
     <div class="track-shell" id="trackInput">
       <div class="track-card">
         <h1 class="h2">Track Your Orders</h1>
-        <form id="trackForm" novalidate>
+        <form id="trackForm" action="php/track-shipment.php" method="POST">
           <label for="awbInput" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Airway Bill Numbers</label>
-          <textarea id="awbInput" rows="5" placeholder="Enter your Airway Bill Number (AWB). For multiple AWBs, enter each on a new line or separate by comma." style="border:1.5px solid var(--border);border-radius:var(--radius-sm);width:100%;padding:14px;font-size:.95rem;resize:vertical"></textarea>
+          <textarea id="awbInput" name="awb" rows="5" placeholder="Enter your Airway Bill Number (AWB). For multiple AWBs, enter each on a new line or separate by comma." style="border:1.5px solid var(--border);border-radius:var(--radius-sm);width:100%;padding:14px;font-size:.95rem;resize:vertical"></textarea>
           <button type="submit" class="btn btn-primary btn-block btn-lg" id="trackBtn" style="margin-top:16px">Track now</button>
           <div id="trackMsg"></div>
         </form>
@@ -114,6 +114,6 @@
 </a>
 
 <script src="js/main.js"></script>
-<script src="js/tracking.js"></script>
+<!--<script src="js/tracking.js"></script>-->
 </body>
 </html>
