@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Track Your Order — Online Xpress</title>
+<meta name="description" content="Track your Online Xpress shipments in real-time. Enter one or more Airway Bill Numbers (AWB) for live status, delivery progress, and full scan history.">
+<link rel="canonical" href="https://onlinexpress.co.in/tracking.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Track Your Order — Online Xpress">
+<meta property="og:description" content="Real-time shipment tracking with full scan history.">
+<meta property="og:image" content="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782824174/Icon-OnlineXpress_aeynkp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782824174/Icon-OnlineXpress_aeynkp.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782824174/Icon-OnlineXpress_aeynkp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Online Xpress home"><img src="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782824098/online-xpress-logo_dr6gpu.png" alt="Online Xpress"></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="products.html">Products</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="tracking.html" class="active" aria-current="page">Tracking</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn-login" href="https://b2c.onlinexpress.co.in/#/auth/login" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Log In | Sign Up</a>
+      <button class="hamburger" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="mm-head"><img src="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782824098/online-xpress-logo_dr6gpu.png" alt="Online Xpress" style="height:36px"><button class="mm-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <a class="mm-link" href="index.html">Home</a>
+    <a class="mm-link" href="about.html">About Us</a>
+    <a class="mm-link" href="products.html">Products</a>
+    <a class="mm-link" href="features.html">Features</a>
+    <a class="mm-link" href="pricing.html">Pricing</a>
+    <a class="mm-link active" href="tracking.html">Tracking</a>
+    <a class="mm-link" href="contact.html">Contact Us</a>
+    <a class="btn-login" href="https://b2c.onlinexpress.co.in/#/auth/login" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>Log In | Sign Up</a>
+  </div>
+</div>
+
+<main>
+<section class="section" style="min-height:60vh">
+  <span class="orb orb-g" style="width:120px;height:120px;top:6%;left:6%;opacity:.3"></span>
+  <span class="orb orb-p" style="width:90px;height:90px;bottom:14%;right:10%;opacity:.3;animation-delay:-5s"></span>
+  <div class="wrap">
+
+    <!-- VIEW 1: INPUT -->
+    <div class="track-shell" id="trackInput">
+      <div class="track-card">
+        <h1 class="h2">Track Your Orders</h1>
+        <form id="trackForm" novalidate>
+          <label for="awbInput" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Airway Bill Numbers</label>
+          <textarea id="awbInput" rows="5" placeholder="Enter your Airway Bill Number (AWB). For multiple AWBs, enter each on a new line or separate by comma." style="border:1.5px solid var(--border);border-radius:var(--radius-sm);width:100%;padding:14px;font-size:.95rem;resize:vertical"></textarea>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" id="trackBtn" style="margin-top:16px">Track now</button>
+          <div id="trackMsg"></div>
+        </form>
+        <p class="track-helper">Track multiple orders at once by entering each Airway Bill Number (AWB) on a separate line or separated by a comma.</p>
+      </div>
+    </div>
+
+    <!-- VIEW 2: RESULTS -->
+    <div id="trackResults" hidden>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px">
+        <button class="btn btn-outline" id="trackBack">← Track another order</button>
+        <span style="color:var(--muted);font-size:.9rem" id="resultCount"></span>
+      </div>
+      <div id="resultList"></div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-main">
+    <div class="footer-brand">
+      <span class="footer-chip"><img src="https://res.cloudinary.com/drx1zsmeq/image/upload/v1782836577/online-xpress-logo-white_h6scqh.png" alt="Online Xpress"></span>
+      <p>Your one-stop multi-courier shipping platform — transparent pricing, real-time tracking, and early remittance.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.5 8.65 22 10.6 22 14v7h-4v-6.2c0-1.48-.03-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.27V21H9z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V5h-3c-2.2 0-4 1.8-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 3h3l-7 8 8.2 10h-6.4l-5-6-5.7 6H1.5l7.5-8.5L1 3h6.6l4.5 5.5zM16 19h1.7L8 5H6.2z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Products</a></li><li><a href="features.html">Features</a></li></ul></div>
+    <div class="footer-col"><h4>Support</h4><ul><li><a href="pricing.html">Pricing</a></li><li><a href="tracking.html">Tracking</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="contact.html#faq">FAQ</a></li></ul></div>
+    <div class="footer-col"><h4>Get in Touch</h4><ul class="footer-contact">
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>D-47, Okhla Phase I, Okhla Industrial Area, New Delhi</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg>+91-11-4155-343</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 6 10-6"/></svg>sales@onlinexpress.co.in</li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© <span data-year>2025</span> Online Xpress. All rights reserved. Designed &amp; Developed by <b>Assam Digital</b>.</div>
+</footer>
+
+<a class="wa-float" data-wa href="#" aria-label="Speak with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-5.9A11.4 11.4 0 011 12 11.4 11.4 0 0112.5.6 11.4 11.4 0 0124 12 11.4 11.4 0 0112.5 23.4a11.5 11.5 0 01-5.5-1.4l-6 1.5zm6.3-3.6l.4.2a9.5 9.5 0 005.3 1.5 9.5 9.5 0 100-19 9.5 9.5 0 00-8 14.6l.3.4-.9 3.3 3.6-.9zm10.6-5.1c-.1-.2-.5-.4-1-.6s-1.6-.8-1.8-.9-.4-.1-.6.1-.7.9-.8 1-.3.2-.5.1a7.7 7.7 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.4.1-.6l.4-.5.3-.4v-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-1 2.3 5.3 5.3 0 001.1 2.8 12 12 0 004.6 4.1c.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.6-.6 1.8-1.3s.2-1.1.2-1.2z"/></svg>
+  <span>Speak with us</span>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/tracking.js"></script>
+</body>
+</html>
